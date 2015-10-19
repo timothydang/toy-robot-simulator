@@ -7,6 +7,20 @@ describe('Table', function() {
     bot      = new Robot(botTable);
   })
 
+  describe('constructor', function() {
+    it('should construct a new Table', function() {
+      var newTable = new Table();
+      expect(newTable.size).to.equal(5);
+      expect(newTable.validDirections.length).to.equal(4);
+    });
+
+    it('should construct a new Table with a given size', function() {
+      var newTable = new Table(7);
+      expect(newTable.size).to.equal(7);
+      expect(newTable.validDirections.length).to.equal(4);
+    });
+  });
+
   describe('#isValidPosition()', function() {
     it('should be true given valid position values', function() {
       expect(botTable.isValidPosition(0, 0, 'EAST')).to.be.true;

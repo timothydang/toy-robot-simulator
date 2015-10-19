@@ -4,7 +4,7 @@ var Table = function(size) {
   }
 
   // Default size to 5 x 5 square
-  if (size === null) {
+  if (size === undefined) {
     size = 5;
   }
 
